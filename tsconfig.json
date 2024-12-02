@@ -9,21 +9,36 @@
     "importHelpers": true,
     "inlineSources": true,
     "lib": [
-      "es2022",
+      "esnext",
       "DOM"
     ],
-    "module": "es2022",
+    "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "outDir": "./dist",
+    "plugins": [
+      {
+        "name": "ts-lit-plugin",
+        "strict": true,
+        "rules": {
+          "no-missing-element-type-definition": "off",
+          "no-missing-import": "off",
+          "no-unknown-attribute": "error",
+          "no-unknown-event": "error",
+          "no-unknown-property": "error",
+          "no-unknown-tag-name": "error",
+        }
+      }
+    ],
     "rootDir": "./src",
     "sourceMap": true,
     "strict": true,
-    "target": "es2021"
+    "target": "esnext",
+    "useDefineForClassFields": false
   },
   "exclude": [],
   "include": [

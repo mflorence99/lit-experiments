@@ -1,9 +1,22 @@
 import { LitElement } from 'lit';
+import { TemplateResult } from 'lit';
 
+import { asyncReplace } from 'lit-html/directives/async-replace.js';
 import { css } from 'lit';
 import { customElement } from 'lit/decorators.js';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
+
+const wait = (t: number): unknown =>
+  new Promise((resolve) => setTimeout(resolve, t));
+
+async function* countUp(): any {
+  let i = 0;
+  while (true) {
+    yield i++;
+    await wait(1000);
+  }
+}
 
 @customElement('simple-greeting')
 export class SimpleGreeting extends LitElement {
@@ -18,17 +31,17 @@ export class SimpleGreeting extends LitElement {
     }
   `;
 
-  @property() name?: string = 'World';
+  @property({ type: String }) name?: string = 'World';
 
-  override render(): any {
+  override render(): TemplateResult {
     return html`
-      <p>Hello, ${this.name}!</p>
+      <p>Hello, ${this.name}! ${asyncReplace(countUp())}</p>
     `;
   }
 }
 
-declare global {
-  interface HTMLElementTagNameMap {
-    'simple-greeting': SimpleGreeting;
-  }
-}
+// declare global {
+//   interface HTMLElementTagNameMap {
+//     'simple-greeting': SimpleGreeting;
+//   }
+// }
