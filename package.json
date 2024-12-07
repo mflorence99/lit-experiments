@@ -1,10 +1,10 @@
 {
   "type": "module",
   "scripts": {
-    "build": "tsc --watch",
+    "dev:build": "tsc --watch",
+    "dev:serve": "web-dev-server",
     "lint": "eslint src/ && lit-analyzer",
     "prettier": "prettier --write .",
-    "serve": "web-dev-server",
     "stylelint": "stylelint --fix **/*.{css,ts}"
   },
   "dependencies": {
