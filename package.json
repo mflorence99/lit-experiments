@@ -29,7 +29,6 @@
     "postcss": "^8.4.49",
     "postcss-lit": "^1.1.1",
     "prettier": "^3.4.1",
-    "prettier-eslint": "^16.3.0",
     "prettier-plugin-css-order": "^2.1.2",
     "prettier-plugin-package": "^1.4.0",
     "stylelint": "^16",
