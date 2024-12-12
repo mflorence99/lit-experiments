@@ -2,12 +2,10 @@
   "compileOnSave": true,
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "declaration": true,
-    "declarationMap": true,
+    "declaration": false,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "inlineSources": true,
     "lib": [
       "esnext",
       "DOM"
@@ -35,7 +33,7 @@
       }
     ],
     "rootDir": "./src",
-    "sourceMap": true,
+    "sourceMap": false,
     "strict": true,
     "target": "esnext",
     "useDefineForClassFields": false
